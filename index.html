@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>First Code - With Bulma</title>
+</head>
+<body>
+    <section id="navbar">
+        <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand px-2 pt-2">
+                <a class="" href="https://bio.link/douglasdcc">
+                    <img src="images/Logo_DCC3.png" width="112" height="64">
+                </a>
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+                <div class="navbar-menu" id="navMenu">
+                </div>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a href="#home" class="navbar-item">Home</a>
+                    <a href="#about" class="navbar-item">About</a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">More</a>
+                        <div class="navbar-dropdown">
+                            <a href="https://bio.link/douglasdcc" class="navbar-item"><i class="fas fa-address-book m-2"></i>Contact</a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item"><i class="fab fa-github m-2"></i>Repository</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary"><strong>Sign up</strong></a>
+                            <a class="button is-light">Log in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- Home section -->
+    <section id="home" class="hero is-medium is-primary">
+        <div class="hero-body has-text-centered">
+          <p class="title">
+            Py-Script test using BulmaCSS
+          </p>
+          <p class="subtitle">
+            Small project to demonstrate the integration of py-script code inside an HTML file using Bulma CSS.
+          </p>
+        </div>
+    </section>
+    <!-- About section -->
+    <section id="about" class="hero is-small is-link py-4 px-4">
+        <div class="hero-body">
+          <p class="title">
+            About
+          </p>
+          <p class="subtitle">
+            This project was developed as a proof of concept for using Python codes directly in the frontend as well as demonstrating knowledge and complementing the portfolio.
+          </p>
+        </div>
+    </section>
+    <!-- Py-script section -->
+    <section id="py-script-content" class="py-6 px-4">
+        <div class="columns is-multiline is-left">
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Fibonacci</p>
+                    </header>
+                    <div class="content py-2 has-text-centered">
+                        <py-script>
+                            cache = {0: 0, 1: 1}
+                            def fibonacci_of(n):
+                                if n in cache:  # Base case
+                                    return cache[n]
+                                # Compute and cache the Fibonacci number
+                                cache[n] = fibonacci_of(n - 1) + fibonacci_of(n - 2)  # Recursive case
+                                return cache[n]
+                            [fibonacci_of(n) for n in range(15)]
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">List Flattening</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            print('List flattening','-'*20)
+                            list_of_lists = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"]]
+                            print(f'Input: {list_of_lists}')
+                            flattened_list = [item for sublist in list_of_lists for item in sublist]
+                            print(f'Output: {flattened_list}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">List Duplicates</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            print('Get unique elements from list','-'*20)
+                            list_duplicates = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'a', 'a', 'c', 'd', 'e', 'l', 'g', 'z', 'i']
+                            print(f'Duplicates: {list_duplicates}')
+                            unique_list = list(set(list_duplicates))
+                            print(f'Uniques: {unique_list}')
+                            # If you need to sort the list
+                            print(f'Sorted Uniques: {sorted(unique_list)}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Password Generator</p>
+                    </header>
+                    <div class="content py-2 has-text-centered">
+                        <py-script>
+                            import random
+                            import string
+        
+                            total = string.ascii_letters + string.digits + string.punctuation
+        
+                            length = 16
+        
+                            password = "".join(random.sample(total, length))
+        
+                            print(f'Password: {password}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Change String Case</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            print('Change string case','-'*20)
+                            my_string = "sTrangECaSE"
+                            print(f'Standard: {my_string}')
+                            my_string_lower = my_string.lower()
+                            print(f'Lower: {my_string_lower}')
+                            my_string_upper = my_string.upper()
+                            print(f'Upper: {my_string_upper}')
+                            my_string_title = my_string.title()
+                            print(f'Title: {my_string_title}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Merge Two List</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            print('Merge two list into a dictionary','-'*20)
+                            list_a = ['a', 'b', 'c']
+                            print(f'List A: {list_a}')
+                            list_b = [1, 2, 3]
+                            print(f'List B: {list_b}')
+                            out_dict = dict(zip(list_a, list_b))
+                            print(f'Merged Dictionary: {out_dict}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Sort List of Dicts by Key</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            print('Sort a list of dictionaries by a key','-'*20)
+                            people = [
+                                {'name': 'John', 'height': 90},
+                                {'name': 'Mary', 'height': 160},
+                                {'name': 'Isla', 'height': 80},
+                                {'name': 'Sam', 'height': 75},
+                            ]
+                            print(f'People: {people}')
+                            print('-'*20)
+                            sorted_people = sorted(people, key=lambda k: k['height'])
+                            print(f'Sorted People: {sorted_people}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Get Most Frequent Value From a List</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            print('Get most frequent value from a list','-'*20)
+                            list_a = ['a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'b', 'a', 'b', 'c', 'b', 'b', 'c', 'a', 'b', 'c']
+                            print(f'List A: {list_a}')
+                            print(f'Most frequent value: {max(set(list_a), key=list_a.count)}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Palindrome</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            palindrome_string = "racecar"
+                            print(f'Word: {palindrome_string}')
+                            is_palindrome = palindrome_string == palindrome_string[::-1]
+                            print(f'Is a palindrome: {is_palindrome}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-mobile is-half-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
+                <div class="card" style="min-height: 20em;">
+                    <header class="card-header hero is-medium is-primary">
+                        <p class="card-header-title has-text-white">Merge Two Dictionaries with **</p>
+                    </header>
+                    <div class="content py-2 px-4">
+                        <py-script>
+                            dict1 = {1: "PY", 2: "JS"}
+                            print(f'Dict1: {dict1}')
+                            dict2 = {3: "CPP", 4: "C#"}
+                            print(f'Dict2: {dict2}')
+                            dict3 = {**dict1, **dict2}
+                            print(f'Mergef Dict: {dict3}')
+                        </py-script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer section -->
+    <footer class="hero is-primary py-6 px-4">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Py-Script test using BulmaCSS</strong> by <a href="https://bio.link/douglasdcc">Douglas Cunha</a>. The source code is licensed by
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a> license.
+            </p>
+            <a href="https://bio.link/douglasdcc"><span class="icon has-text-white"><i class="fa fa-globe"></i></span></a>
+            <a href="https://www.linkedin.com/in/douglas-collar-da-cunha-1185904a/"><span class="icon has-text-white"><i class="fab fa-linkedin-in"></i></span></a>
+            <a href="https://github.com/douglasdcc"><span class="icon has-text-white"><i class="fab fa-github"></i></span></a>
+            <a href="https://bulma.io/" target="_blank"><figure class="is-128by24">
+                <img src="https://bulma.io/images/made-with-bulma.png" width="128" height="24">
+            </figure></a>
+        </div>
+      </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+
+        // Check for click events on the navbar burger icon
+        $(".navbar-burger").click(function() {
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+
+        });
+        });
+    </script>
+</body>
+</html>
