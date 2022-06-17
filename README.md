@@ -32,9 +32,9 @@
 ---
 
 <a>
- <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C5603AQEuSn8m-C_39g/profile-displayphoto-shrink_200_200/0/1517542585714?e=1653523200&v=beta&t=yO2Q6M3ccsUUwSO2-q9yH0iqM5no_fQjDPkTA2zFSSY" width="100px;" alt=""/>
- <br />
- <sub><b>Douglas Collar</b></sub></a> <a>🚀</a>
+<img style="border-radius: 50%;" src="https://cdn.bio.link/uploads/profile_pictures/2022-06-03/YQh8fmJkt7Wr7YrSE5JuGQHv0RXeBuCS.png" width="100px;" alt=""/>
+<br />
+<sub><b>Douglas Collar</b></sub></a> <a>🚀</a>
 
 
- ✨ Thanks for your hard work! ❤️ ✨
+✨ Thanks for your hard work! ❤️ ✨
